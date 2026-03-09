@@ -1,14 +1,16 @@
-# rc — Rust learning companion
+# rc
 
-A TUI app for tracking progress through Rust textbooks, built as a vehicle for learning Rust itself.
+> *"I know what I am. And after all these years, there's a comfort in that."*
+
+A TUI learning companion for working through Rust textbooks. Named after the detective. Built with the language. The irony isn't lost on anyone.
 
 ## What it does
 
-`rc` tracks chapter completion across *The Rust Programming Language* and *Rust for Rustaceans*, and will eventually integrate with the Anthropic API for interactive features like explanations, quizzes, and exercise generation.
+Tracks chapter completion across *The Rust Programming Language* and *Rust for Rustaceans*. Eventually it'll hook into the Anthropic API — explanations, quizzes, generated exercises. The kind of thing that makes you feel like the universe is becoming aware of itself through your compiler errors.
 
 ## Status
 
-Early development — Week 1 of a phased build-out.
+Early days. The borrow checker will humble you. That's the point.
 
 | Phase | Focus | Status |
 |---|---|---|
@@ -20,10 +22,10 @@ Early development — Week 1 of a phased build-out.
 ## Usage
 
 ```
-rc              # print welcome message
-rc --help       # (coming soon)
-rc list         # (Phase 1) list chapters
-rc status       # (Phase 1) show progress summary
+rc                     # hear what rc has to say
+rc --help              # (coming soon)
+rc list                # (Phase 1) list chapters
+rc status              # (Phase 1) show progress summary
 rc complete <chapter>  # (Phase 1) mark a chapter done
 ```
 
