@@ -82,9 +82,9 @@ impl std::fmt::Display for ExerciseType {
 // ── Convenience constructors ────────────────────────────────────────
 
 impl Exercise {
-    pub fn new(description: impl Into<String>, exercise_type: ExerciseType) -> Self {
+    pub fn new(description: String, exercise_type: ExerciseType) -> Self {
         Self {
-            description: description.into(),
+            description,
             exercise_type,
             status: Status::NotStarted,
         }
@@ -92,13 +92,34 @@ impl Exercise {
 }
 
 impl Chapter {
-    pub fn new(book: Book, number: u32, title: impl Into<String>) -> Self {
+    pub fn new(book: Book, number: u32, title: String) -> Self {
         Self {
             book,
             number,
-            title: title.into(),
+            title,
             exercises: Vec::new(),
         }
+    }
+
+    pub fn status(&self) -> Status {
+        if self.exercises.is_empty() {
+            return Status::NotStarted;
+        }
+
+        let all_complete = self.exercises.iter().all(|e| e.status == Status::Complete);
+        if all_complete {
+            return Status::Complete;
+        }
+
+        let any_started = self
+            .exercises
+            .iter()
+            .any(|e| e.status != Status::NotStarted);
+        if any_started {
+            return Status::InProgress;
+        }
+
+        Status::NotStarted
     }
 }
 
@@ -124,33 +145,12 @@ impl Default for Progress {
     }
 }
 
-impl Chapter {
-    /// Derive the chapter's overall status from its exercises.
-    /// - No exercises → NotStarted
-    /// - All complete → Complete
-    /// - Any in progress or complete → InProgress
-    /// - Otherwise → NotStarted
-    pub fn status(&self) -> Status {
-        if self.exercises.is_empty() {
-            return Status::NotStarted;
-        }
-
-        let all_complete = self.exercises.iter().all(|e| e.status == Status::Complete);
-        if all_complete {
-            return Status::Complete;
-        }
-
-        let any_started = self
-            .exercises
-            .iter()
-            .any(|e| e.status != Status::NotStarted);
-        if any_started {
-            return Status::InProgress;
-        }
-
-        Status::NotStarted
+impl Default for Status {
+    fn default() -> Self {
+        Self::NotStarted
     }
 }
+
 
 // ── Tests ───────────────────────────────────────────────────────────
 
@@ -160,24 +160,29 @@ mod tests {
 
     #[test]
     fn chapter_status_no_exercises() {
-        let ch = Chapter::new(Book::Trpl, 1, "Getting Started");
+        let ch = Chapter::new(Book::Trpl, 1, String::from("Getting Started"));
         assert_eq!(ch.status(), Status::NotStarted);
     }
 
     #[test]
     fn chapter_status_all_not_started() {
-        let mut ch = Chapter::new(Book::Trpl, 3, "Common Concepts");
-        ch.exercises.push(Exercise::new("Read the chapter", ExerciseType::Reading));
-        ch.exercises.push(Exercise::new("Write a temp converter", ExerciseType::Coding));
+        let mut ch = Chapter::new(Book::Trpl, 3, String::from("Common Concepts"));
+        ch.exercises
+            .push(Exercise::new(String::from("Read the chapter"), ExerciseType::Reading));
+        ch.exercises.push(Exercise::new(
+            String::from("Write a temp converter"),
+            ExerciseType::Coding,
+        ));
         assert_eq!(ch.status(), Status::NotStarted);
     }
 
     #[test]
     fn chapter_status_in_progress() {
-        let mut ch = Chapter::new(Book::RustForRustaceans, 1, "Foundations");
-        ch.exercises.push(Exercise::new("Read the chapter", ExerciseType::Reading));
+        let mut ch = Chapter::new(Book::RustForRustaceans, 1, String::from("Foundations"));
+        ch.exercises
+            .push(Exercise::new(String::from("Read the chapter"), ExerciseType::Reading));
         ch.exercises.push(Exercise {
-            description: "Quiz on ownership".into(),
+            description: String::from("Quiz on ownership"),
             exercise_type: ExerciseType::Quiz,
             status: Status::Complete,
         });
@@ -186,14 +191,14 @@ mod tests {
 
     #[test]
     fn chapter_status_all_complete() {
-        let mut ch = Chapter::new(Book::Trpl, 5, "Using Structs");
+        let mut ch = Chapter::new(Book::Trpl, 5, String::from("Using Structs"));
         ch.exercises.push(Exercise {
-            description: "Read the chapter".into(),
+            description: String::from("Read the chapter"),
             exercise_type: ExerciseType::Reading,
             status: Status::Complete,
         });
         ch.exercises.push(Exercise {
-            description: "Build a rectangle struct".into(),
+            description: String::from("Build a rectangle struct"),
             exercise_type: ExerciseType::Coding,
             status: Status::Complete,
         });
@@ -204,14 +209,14 @@ mod tests {
     fn progress_count_by_status() {
         let mut progress = Progress::new();
 
-        let mut ch1 = Chapter::new(Book::Trpl, 1, "Getting Started");
+        let mut ch1 = Chapter::new(Book::Trpl, 1, String::from("Getting Started"));
         ch1.exercises.push(Exercise {
-            description: "Install Rust".into(),
+            description: String::from("Install Rust"),
             exercise_type: ExerciseType::Coding,
             status: Status::Complete,
         });
 
-        let ch2 = Chapter::new(Book::Trpl, 2, "Guessing Game");
+        let ch2 = Chapter::new(Book::Trpl, 2, String::from("Guessing Game"));
 
         progress.chapters.push(ch1);
         progress.chapters.push(ch2);
@@ -231,7 +236,7 @@ mod tests {
 
     #[test]
     fn exercise_new_defaults_to_not_started() {
-        let ex = Exercise::new("Do the thing", ExerciseType::Quiz);
+        let ex = Exercise::new(String::from("Do the thing"), ExerciseType::Quiz);
         assert_eq!(ex.status, Status::NotStarted);
         assert_eq!(ex.description, "Do the thing");
         assert_eq!(ex.exercise_type, ExerciseType::Quiz);
@@ -240,8 +245,9 @@ mod tests {
     #[test]
     fn serde_round_trip() {
         let mut progress = Progress::new();
-        let mut ch = Chapter::new(Book::Trpl, 1, "Getting Started");
-        ch.exercises.push(Exercise::new("Hello world", ExerciseType::Coding));
+        let mut ch = Chapter::new(Book::Trpl, 1, String::from("Getting Started"));
+        ch.exercises
+            .push(Exercise::new(String::from("Hello world"), ExerciseType::Coding));
         progress.chapters.push(ch);
 
         let json = serde_json::to_string(&progress).unwrap();
