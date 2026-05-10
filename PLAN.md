@@ -18,7 +18,7 @@
 
 - **Phase:** 1 — CLI Foundation
 - **Week:** 2
-- **Last session:** 2026-03-22
+- **Last session:** 2026-05-10
 - **Next goal:** Week 3 — Create `data/curriculum.json` with both books' chapters; deserialize with serde in `curriculum.rs`
 - **Blockers:** None
 
