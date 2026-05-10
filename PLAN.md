@@ -17,9 +17,9 @@
 ## Current Status
 
 - **Phase:** 1 — CLI Foundation
-- **Week:** 1
-- **Last session:** 2026-03-08
-- **Next goal:** Week 2 — Define `Chapter`, `Exercise`, and `Progress` structs in `model.rs`
+- **Week:** 2
+- **Last session:** 2026-03-22
+- **Next goal:** Week 3 — Create `data/curriculum.json` with both books' chapters; deserialize with serde in `curriculum.rs`
 - **Blockers:** None
 
 ## Tech Stack
@@ -79,7 +79,7 @@ The project is also a vehicle for learning to work effectively with LLMs as a de
 ### Sessions
 
 - [x] **W1** — `cargo init`, set up project structure, `rc` compiles and prints a welcome message
-- [ ] **W2** — Define `Chapter`, `Exercise`, and `Progress` structs and enums in `model.rs`
+- [x] **W2** — Define `Chapter`, `Exercise`, and `Progress` structs and enums in `model.rs`
 - [ ] **W3** — Create `data/curriculum.json` with both books' chapters; deserialize with serde in `curriculum.rs`
 - [ ] **W4** — `rc list` — pretty-print the chapter list to stdout using clap for CLI parsing
 - [ ] **W5** — `rc status` — show overall progress summary (chapters completed / total)
