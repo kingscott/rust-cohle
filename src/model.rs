@@ -30,6 +30,7 @@ pub enum Status {
 pub struct Exercise {
     pub description: String,
     pub exercise_type: ExerciseType,
+    #[serde(default)]
     pub status: Status,
 }
 

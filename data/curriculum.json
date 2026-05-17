@@ -1,0 +1,274 @@
+{
+  "chapters": [
+    {
+      "book": "Trpl",
+      "number": 1,
+      "title": "Getting Started",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 2,
+      "title": "Programming a Guessing Game",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Build the guessing game", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 3,
+      "title": "Common Programming Concepts",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Write a temperature converter", "exercise_type": "Coding" },
+        { "description": "Generate the nth Fibonacci number", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 4,
+      "title": "Understanding Ownership",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 5,
+      "title": "Using Structs to Structure Related Data",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Build a rectangle struct with area calculation", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 6,
+      "title": "Enums and Pattern Matching",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Model a coin enum and value function with pattern matching", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 7,
+      "title": "Managing Growing Projects with Packages, Crates, and Modules",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 8,
+      "title": "Common Collections",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Statistics from a list of integers (mean, median, mode)", "exercise_type": "Coding" },
+        { "description": "Convert strings to pig latin", "exercise_type": "Coding" },
+        { "description": "Employee department tracker using a hash map", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 9,
+      "title": "Error Handling",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 10,
+      "title": "Generic Types, Traits, and Lifetimes",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Extract a generic largest function", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 11,
+      "title": "Writing Automated Tests",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Write unit tests for an existing module", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 12,
+      "title": "An I/O Project: Building a Command Line Program",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Build minigrep", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 13,
+      "title": "Functional Language Features: Iterators and Closures",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Improve minigrep with iterators", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 14,
+      "title": "More About Cargo and Crates.io",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 15,
+      "title": "Smart Pointers",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 16,
+      "title": "Fearless Concurrency",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Spawn threads and pass data with channels", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 17,
+      "title": "Object-Oriented Programming Features",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 18,
+      "title": "Patterns and Matching",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 19,
+      "title": "Advanced Features",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "Trpl",
+      "number": 20,
+      "title": "Final Project: Building a Multithreaded Web Server",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" },
+        { "description": "Build the multithreaded web server", "exercise_type": "Coding" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 1,
+      "title": "Foundations",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 2,
+      "title": "Types",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 3,
+      "title": "Designing Interfaces",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 4,
+      "title": "Error Handling",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 5,
+      "title": "Project Structure",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 6,
+      "title": "Testing",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 7,
+      "title": "Macros",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 8,
+      "title": "Asynchronous Programming",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 9,
+      "title": "Unsafe Code",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 10,
+      "title": "Concurrency and Parallelism",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 11,
+      "title": "Foreign Function Interfaces",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    },
+    {
+      "book": "RustForRustaceans",
+      "number": 12,
+      "title": "Rust Without the Standard Library",
+      "exercises": [
+        { "description": "Read the chapter", "exercise_type": "Reading" }
+      ]
+    }
+  ]
+}
